@@ -7,12 +7,14 @@ where p.pno = sp.pno
 group by p.pname;
 
 #12. Show each suppers whose suppler number is less then 's4' give total qty supply by each suppler.
-select s_no, sum(sp.qty) 
-from sp where s_no<'s4' 
-group by s_no;
+select sno ,sum(sp.qty)
+from sp
+where sno<"s4" 
+group by sno;
 
 #13. Show each suppers whose suppler status is 20 give total qty supply by each suppler.
-select s.s_no,s.s_status, sum(sp.qty) 
-from s,sp where s.s_status=20 
-and s.s_no = sp.s_no
-group by s.s_no;
+select s.sno,s.sstatus,sum(sp.qty)
+from sp,s
+where s.sstatus="20"
+and s.sno=sp.sno
+group by s.sno;
