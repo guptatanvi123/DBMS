@@ -4,10 +4,10 @@ create database gvp_Tanvi;
 use gvp_Tanvi1;
 
 create table s(
-s_no char(3) primary key,
-s_name varchar(50),
-s_status int,
-s_city varchar(25)
+sno char(3) primary key,
+sname varchar(50),
+sstatus int,
+scity varchar(25)
 );
 
 insert into s values('s1',"Smith",20,"London"),
@@ -17,11 +17,11 @@ insert into s values('s1',"Smith",20,"London"),
 ('s5',"Adams",30,"Athens");
 
 create table p(
-p_no char(3) primary key,
-p_name varchar(20),
-color varchar(10),
-weight float(5.2),
-p_city varchar(25)
+pno char(3) primary key,
+pname varchar(20),
+pcolor varchar(10),
+pweight float(5.2),
+pcity varchar(25)
 );
 
 insert into p values('p1',"Nut","Red",12.0,"London"),
@@ -32,12 +32,12 @@ insert into p values('p1',"Nut","Red",12.0,"London"),
 ('p6',"Cog","Red",19.0,"London");
 
 create table sp(
-s_no char(3),
-p_no char(3),
+sno char(3),
+pno char(3),
 qty int,
-primary key(s_no,p_no),
-foreign key(s_no) references s(s_no),
-foreign key(p_no) references p(p_no)
+primary key(sno,pno),
+foreign key(sno) references s(sno),
+foreign key(pno) references p(pno)
 );
 
 insert into sp values('s1','p1',300),
