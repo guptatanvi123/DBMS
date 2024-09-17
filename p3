@@ -22,7 +22,7 @@ and p.pcolor="red";
 
 #9. Show each supplers total qty supply.
 select s_no, sum(sp.qty) 
-from sp group by s_no;
+from sp group by sno;
 
 #10. Show each parts total qty supply.
 select pno ,sum(sp.qty)
